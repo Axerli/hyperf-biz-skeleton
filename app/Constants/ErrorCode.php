@@ -23,4 +23,9 @@ class ErrorCode extends AbstractConstants
      * @Message("Server Error！")
      */
     public const SERVER_ERROR = 500;
+
+    /**
+     * @Message("参数错误")
+     */
+    public const PARAM_INVALID = 100100;
 }

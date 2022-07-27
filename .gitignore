@@ -13,3 +13,4 @@ vendor/
 .DS_Store
 .phpunit*
 *.cache
+*.lock
