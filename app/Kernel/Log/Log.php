@@ -21,11 +21,21 @@ class Log
 {
     /**
      * @param string $name
+     * @param string $group
      * @return mixed|\Psr\Log\LoggerInterface
      */
-    public static function logger(string $name = 'app')
+    public static function logger(string $name = 'app', string $group =  'default')
     {
-        return di(LoggerFactory::class)->get($name);
+        return di(LoggerFactory::class)->get($name, $group);
+    }
+
+    /**
+     * @param string $group
+     * @return mixed|\Psr\Log\LoggerInterface
+     */
+    public static function group(string $group = 'default', string $name = 'app')
+    {
+        return self::logger($name, $group);
     }
 
     public static function __callStatic(string $method, $arguments)
